@@ -9,6 +9,9 @@ DRL-Atari: Playing Atari Games with Deep Reinforcement Learning
 **on your participation in this project, but not only the final**
 **codes.**
 
+.. contents:: **Table of Contents**
+    :depth: 2
+
 
 Week 1: Preliminaries
 ================================================================
@@ -78,4 +81,41 @@ in the `assets`_.
 Week 2: Prepare Atari Emulators
 ================================================================
 
-[TBD]
+*Check correspondent item in Projects board* (`Spring-2018`_)
+*once you get something done*.
+
+.. _`Spring-2018`: https://github.com/lukeluochina/drl-atari/projects/1
+
+
+Install OpenAI Gym
+----------------------------------------------------------------
+
+Refer to `OpenAI Gym Docs`_.
+
+.. _`OpenAI Gym Docs`: https://gym.openai.com/docs/
+
+
+OpenAI Gym for Human Players
+----------------------------------------------------------------
+
+Refer to the `example from OpenAI Gym`_.
+
+.. _`example from OpenAI Gym`: "https://github.com/openai/gym/blob/master/examples/agents/keyboard_agent.py"
+
+
+A Redundant but More Friendly Wrapper for OpenAI Gym
+----------------------------------------------------------------
+
+Refer to the project `gym-tracker`_.
+
+.. _`gym-tracker`: https://github.com/alvinwan/gym-tracker
+
+
+Get it Off-the-shelf for Newbies to Atari Games with
+----------------------------------------------------------------
+Illustrative Guides
+----------------------------------------------------------------
+
+Refer to a DQN `model`_.
+
+.. _`model`: https://github.com/devsisters/DQN-tensorflow/blob/master/assets/model.png
