@@ -1,6 +1,6 @@
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 DRL-Atari: Playing Atari Games with Deep Reinforcement Learning
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **[Progress Branch]**:
 *This branch is only for tracking progress, and all codes should*
@@ -12,18 +12,18 @@ DRL-Atari: Playing Atari Games with Deep Reinforcement Learning
 *codes.*
 
 
-################################################################
+################################################################################
 
 
 .. contents:: **[Table of Contents]**:
     :depth: 2
 
 
-################################################################
+################################################################################
 
 
 Week 1: Preliminaries
-================================================================
+================================================================================
 
 **[Tips]**:
 *Check correspondent item in Projects board* (`Spring-2018`_)
@@ -33,7 +33,7 @@ Week 1: Preliminaries
 
 
 Prepare your operating system
-----------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 We use Ubuntu 16.04 LTS in this project, and any releases with
 Ubuntu 16.04 should work, such as ``ubuntu-16.04.4-desktop-amd``,
@@ -54,7 +54,7 @@ using Shell commands in Linux.
 
 
 Prepare your Python environment
-----------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 We use Python 3.6 in this project, and the Anaconda release is
 recommended (which would significantly reduce your time spent
@@ -66,8 +66,8 @@ in setting-up environments).
     "Anaconda For Linux Installer", "https://www.anaconda.com/download/#linux"
 
 
-Get familiar with NumPy
-----------------------------------------------------------------
+Get familiar with ``NumPy``
+--------------------------------------------------------------------------------
 
 Follow the sections ``Python`` and ``NumPy`` of the `tutorial`_ in
 Stanford cs231n.
@@ -78,10 +78,10 @@ Stanford cs231n.
 *Feel free to skip this part if you are already experienced in it*.
 
 
-Get familiar with Jupyter Notebook
-----------------------------------------------------------------
+Get familiar with ``Jupyter Notebook``
+--------------------------------------------------------------------------------
 
-Explore Jupyter Notebook yourself with the help of two cheat sheets
+Explore ``Jupyter Notebook`` yourself with the help of two cheat sheets
 in the `assets`_.
 
 .. _`assets`: assets/week1/
@@ -90,11 +90,11 @@ in the `assets`_.
 *Feel free to skip this part if you are already experienced in it*.
 
 
-################################################################
+################################################################################
 
 
-Week 2: Prepare Atari Emulators
-================================================================
+Week 2: Prepare the Atari Emulators
+================================================================================
 
 **[Tips]**:
 *Check correspondent item in Projects board* (`Spring-2018`_)
@@ -104,15 +104,27 @@ Week 2: Prepare Atari Emulators
 
 
 Install OpenAI Gym
-----------------------------------------------------------------
+--------------------------------------------------------------------------------
 
-Refer to `OpenAI Gym Docs`_.
+You should install ``gym`` as well as the ``atari`` dependency in this part.
+Main steps are concluded as below:
 
+.. code:: bash
+
+    (anaconda-py3)$ sudo apt install g++ cmake zlib1g-dev
+    (anaconda-py3)$ pip install gym
+    (anaconda-py3)$ git clone https://github.com/openai/gym.git && cd gym
+    (anaconda-py3)$ pip install -e ".[atari]"
+
+You could run `random_agent.py`_ to validate your installation. And for better
+understanding, you should also refer to `OpenAI Gym Docs`_.
+
+.. _`random_agent.py`: assets/week2/random_agent.py
 .. _`OpenAI Gym Docs`: https://gym.openai.com/docs/
 
 
 OpenAI Gym for Human Players
-----------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Refer to the example from `OpenAI Gym`_.
 
@@ -120,7 +132,7 @@ Refer to the example from `OpenAI Gym`_.
 
 
 A Redundant but More Friendly Wrapper for OpenAI Gym
-----------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Refer to the project `gym-tracker`_.
 
@@ -128,7 +140,7 @@ Refer to the project `gym-tracker`_.
 
 
 Get it Off-the-shelf for Newbies to Atari Games with Illustrative Guides
---------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
 
 Refer to a DQN `model`_.
 
