@@ -29,7 +29,7 @@ Week 1: Preliminaries
 *Check correspondent item in Projects board* (`Spring-2018`_)
 *once you get something done*.
 
-.. _`Spring-2018`: https://github.com/lukeluochina/drl-atari/projects/1
+.. _`Spring-2018`: https://github.com/lukeluochina/drl-atari/projects/
 
 
 Prepare your operating system
@@ -100,7 +100,7 @@ Week 2: Prepare the Environments
 *Check correspondent item in Projects board* (`Spring-2018`_)
 *once you get something done*.
 
-.. _`Spring-2018`: https://github.com/lukeluochina/drl-atari/projects/1
+.. _`Spring-2018`: https://github.com/lukeluochina/drl-atari/projects/
 
 
 Recall
