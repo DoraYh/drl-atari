@@ -1,15 +1,15 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-DRL-Atari: Playing Atari Games with Deep Reinforcement Learning
+DRL-Agent: Playing Games with Deep Reinforcement Learning
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 **[Progress Branch]**:
-*This branch is only for tracking progress, and all codes should*
+*This branch is only for tracking progress, and all code should*
 *be submitted to master branch via pull requests*.
 
 **[About the Final Score]**:
 *The final score of this course would largely depend*
 *on your participation in this project, but not only the final*
-*codes.*
+*code.*
 
 
 ################################################################################
@@ -93,7 +93,7 @@ in the `assets`_.
 ################################################################################
 
 
-Week 2: Prepare the Atari Emulators
+Week 2: Prepare the Environments
 ================================================================================
 
 **[Tips]**:
@@ -103,45 +103,127 @@ Week 2: Prepare the Atari Emulators
 .. _`Spring-2018`: https://github.com/lukeluochina/drl-atari/projects/1
 
 
+Recall
+--------------------------------------------------------------------------------
+
+Before we diving into the code and the environments, we recall **the target of**
+**our project**: we are aiming at building game agents, which interact with
+the environments and should achieve human-level control. Intelligence of
+our agents would come from Deep Reinforcement Learning.
+
+In this week, we would prepare the game environments and get some basic
+knowledge about Reinforcement Learning.
+
+
 Install OpenAI Gym
 --------------------------------------------------------------------------------
 
-You should install ``gym`` as well as the ``atari`` dependency in this part.
-Main steps are concluded as below:
+First we would install the "playground", OpenAI Gym for our DRL algorithms.
+OpenAI Gym is "a toolkit for developing and comparing reinforcement learning
+algorithms", as described in `its GitHub Repository`_.
+
+.. _`its GitHub Repository`: https://github.com/openai/gym
+
+Steps for installing it are concluded as below:
 
 .. code:: bash
 
-    (anaconda-py3)$ sudo apt install g++ cmake zlib1g-dev
-    (anaconda-py3)$ pip install gym
+    (anaconda-py3)$ sudo apt-get install git g++ cmake zlib1g-dev -y
+    (anaconda-py3)$ pip install gym==0.10.3
     (anaconda-py3)$ git clone https://github.com/openai/gym.git && cd gym
+    # for atari games (e.g., "SpaceInvaders-v0")
     (anaconda-py3)$ pip install -e ".[atari]"
 
-You could run `random_agent.py`_ to validate your installation. And for better
-understanding, you should also refer to `OpenAI Gym Docs`_.
+In this project, Han is going to use DQN to play "SpaceInvaders-v0", and so the
+above environment is sufficient. Ruiqi will concerns on continuous control
+problem and so should also install ``box2d`` environment (we would play the game
+"LunarLanderContinuous-v2" in it with DRL in the future but before that, knowing
+about ``atari`` is a good start).
 
-.. _`random_agent.py`: assets/week2/random_agent.py
+.. code:: bash
+
+    # only for games based on box2d (e.g. "LunarLander-v2")
+    (anaconda-py3)$ sudo apt-get install build-essential python3-dev swig3.0 -y
+    (anaconda-py3)$ sudo ln -s /usr/bin/swig3.0 /usr/bin/swig
+    (anaconda-py3)$ pip install box2d==2.3.2 box2d-kengz==2.3.3
+    (anaconda-py3)$ pip install box2d-py==2.3.1 -I
+    (anaconda-py3)$ pip install -e ".[box2d]"
+
+To validate the installation of ``atari`` game environments, you could run the
+commands below:
+
+.. code:: python
+
+    >>> import gym
+    >>> env = gym.make("SpaceInvaders-v0")
+    >>> obs = env.reset()
+    >>> obs, r, done, _ = env.step(0)
+
+To validate the installation of ``box2d`` environments, run commands:
+
+.. code:: python
+
+    >>> import gym
+    >>> import numpy as np
+    >>> env = gym.make("LunarLanderContinuous-v2")
+    >>> obs = env.reset()
+    >>> obs, r, done, _ = env.step(np.array([0., 0.]))
+
+If there throws no exception, then the installed environment should work.
+For more details on the environments, see `OpenAI Gym Docs`_.
+
 .. _`OpenAI Gym Docs`: https://gym.openai.com/docs/
 
 
-OpenAI Gym for Human Players
+Wrappers for Human Players
 --------------------------------------------------------------------------------
 
-Refer to the example from `OpenAI Gym`_.
+To get you understand what you are going to do with DRL in the following weeks
+intuitively, I (@lukeluochina) wrapped these two learning environments (i.e., 
+`"SpaceInvaders-v0"`_ and `"LunarLanderContinuous-v2"`_) with some gaming
+logics, so you can play them and learn by yourself first.
 
-.. _`OpenAI Gym`: https://github.com/openai/gym/blob/master/examples/agents/keyboard_agent.py
+.. _`"SpaceInvaders-v0"`: assets/week2/keyboard_space_invaders.py
+.. _`"LunarLanderContinuous-v2"`: assets/week2/keyboard_lunar_lander.py
+
+**[Tips]**:
+*Since I'm neither an expert in designing games, nor*
+*experienced in using OpenAI Gym, problems such as wrong logics*,
+*inefficient implementation are very likely to appear in my wrappers*.
+*So be careful! And any kind of suggestions are welcomed*.
 
 
-A Redundant but More Friendly Wrapper for OpenAI Gym
+Coding Task: Build Random Agents (Week2)
 --------------------------------------------------------------------------------
 
-Refer to the project `gym-tracker`_.
+**Coding task in this week is to build random agents for your games**.
+Random agents you build in this project should only differ from intelligent
+agents in the way they process inputs,
+which is to say, before each step, your random agents should still get
+sufficient inputs (like raw pixels, positions, velocity, etc.), then ignore
+them, pick valid action randomly, and at last go on with the selected action.
 
-.. _`gym-tracker`: https://github.com/alvinwan/gym-tracker
+**[Tips]**:
+*If you are confused by my poor English, feel free to ask me in Chinese via*
+*WeChat group*.
+
+Before **2018.03.18 23:59**, you should submit your code for random agents.
+(Instructions for submitting code would be updated later.)
 
 
-Get it Off-the-shelf for Newbies to Atari Games with Illustrative Guides
+Reading Task (Week2, Week3)
 --------------------------------------------------------------------------------
 
-Refer to a DQN `model`_.
+**[Reinforcement Learning: An Introduction, Sutton and Barto 2012]**:
 
-.. _`model`: https://github.com/devsisters/DQN-tensorflow/blob/master/assets/model.png
+- Chapter 3.6 MDP
+- Chapter 3.7 Value Functions
+- Chapter 4.1 Policy Evaluation
+- Chapter 4.2 Policy Improvement
+- Chapter 4.3 Policy Iteration
+- Chapter 4.4 Value Iteration
+
+Before **2018.03.25 23:59**, you should hand in a memo explaining the terms
+"MDP", "value function", "policy evaluation", "policy improvement",
+"policy iteration", and "value iteration" in your words. You can write the memo
+in English or in Chinese, depending on your preference.
