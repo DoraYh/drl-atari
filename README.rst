@@ -183,8 +183,8 @@ intuitively, I (@lukeluochina) wrapped these two learning environments (i.e.,
 `"SpaceInvaders-v0"`_ and `"LunarLanderContinuous-v2"`_) with some gaming
 logics, so you can play them and learn by yourself first.
 
-.. _`"SpaceInvaders-v0"`: assets/week2/keyboard_space_invaders.py
-.. _`"LunarLanderContinuous-v2"`: assets/week2/keyboard_lunar_lander.py
+.. _`"SpaceInvaders-v0"`: assets/week2/space_invaders/keyboard_space_invaders.py
+.. _`"LunarLanderContinuous-v2"`: assets/week2/lunar_lander/keyboard_lunar_lander.py
 
 **[Tips]**:
 *Since I'm neither an expert in designing games, nor*
