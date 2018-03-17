@@ -31,7 +31,7 @@ To commit your code, please follow the steps below:
 #. Before creating a pull request, make sure that the unit tests are all passed (if any);
 #. Create a pull request (following the template).
 
-Once the pull request is opened, I (lukeluochina) would spare time to review
+Once the pull request is opened, I (@lukeluochina) would spare time to review
 your submitted code, discuss with you the details inside, and possibly ask you
 to make modifications. After all problems have been resolved, I would merge the
-new feature branch to master branch.
+new feature branch to the master branch.

@@ -226,4 +226,13 @@ Reading Task (Week2, Week3)
 Before **2018.03.25 23:59**, you should hand in a memo explaining the terms
 "MDP", "value function", "policy evaluation", "policy improvement",
 "policy iteration", and "value iteration" in your words. You can write the memo
-in English or in Chinese, depending on your preference.
+either in English or in Chinese, depending on your preference.
+
+
+################################################################################
+
+
+Week3: Reinforcement Leaning Basics
+================================================================================
+
+Go on finishing the reading task.
