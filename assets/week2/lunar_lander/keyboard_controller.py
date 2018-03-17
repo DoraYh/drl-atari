@@ -71,7 +71,6 @@ class Controller(object):
         Returns:
             None
         """
-        self.valid_keys = [gkey.A, gkey.D, gkey.U, gkey.J]
         # power of different engines, indexed by directions
         # actually the powers possibly go out of [0, 1] or [-1, 1]
         # we would get them back with post-processing
@@ -82,69 +81,26 @@ class Controller(object):
         # power delta for each update step
         self.h_delta = h_delta if h_delta is not None else delta
         self.v_delta = v_delta if v_delta is not None else delta
-        # whether the key is being pressed
-        self.pressed = {valid_key: False for valid_key in self.valid_keys}
 
-    # TODO(lukeluochina): using exponential function and conditional
-    # statements in critical control steps might hurt performance
-    @staticmethod
-    def _act1(x):
-        """
-        regulate the power of the horizontal engines to [-1., -0.5] or [0.5, 1.]
-        with sigmoid function
-        """
-        y = 1./( 1. + np.exp(x/3.) ) - 0.5
-        if y < 0. - 1e-5:
-            return y - 0.5
-        elif y > 0. + 1e-5:
-            return y + 0.5
-        else:
-            return 0.
-
-    # TODO(lukeluochina): using exponential function in critical control
-    # steps might hurt performance
-    @staticmethod
-    def _act2(x):
-        """
-        regulate the power of the main engine to [0., 1.] with sigmoid function
-        """
-        return 2./(1+np.exp(x/3.))-1.
-
-    def on_key_press(self, symbol, modifiers):
-        if symbol in self.valid_keys:
-            self.pressed[symbol] = True
-
-    def on_key_release(self, symbol, modifiers):
-        if symbol in self.valid_keys:
-            self.pressed[symbol] = False
 
     def update(self):
         """
-        update the powers according to the keyboard state, note that value of
+        update the powers randomly, note that value of
         the powers are coupled with the activation functions `_act1` and `_act2`
+        
         """
-        if self.pressed[gkey.U] and not self.pressed[gkey.J]:
-            self.powers[self.VERTICAL] -= self.v_delta
-            # at most 16 steps
-            self.powers[self.VERTICAL] = max(-16*self.v_delta,
-                self.powers[self.VERTICAL])
-        elif self.pressed[gkey.J] and not self.pressed[gkey.U]:
-            self.powers[self.VERTICAL] += self.v_delta
-            self.powers[self.VERTICAL] = min(0., self.powers[self.VERTICAL])
-
-        if self.pressed[gkey.A] and not self.pressed[gkey.D]:
-            self.powers[self.HORIZONTAL] = min(0., self.powers[self.HORIZONTAL])
-            self.powers[self.HORIZONTAL] -= self.h_delta
-        elif self.pressed[gkey.D] and not self.pressed[gkey.A]:
-            self.powers[self.HORIZONTAL] = max(0., self.powers[self.HORIZONTAL])
-            self.powers[self.HORIZONTAL] += self.h_delta
-        else:
-            self.powers[self.HORIZONTAL] = 0.
+        self.powers[self.HORIZONTAL] = np.random.rand(1)[0]*2.-1
+        self.powers[self.VERTICAL] = np.random.rand(1)[0]
 
     def get_action(self):
+        """return np.array([
+            np.float32(self.powers[self.VERTICAL]),
+            np.float32(self.powers[self.HORIZONTAL])]
+            , dtype=np.float32)"""
         return np.array([
-            self._act2(self.powers[self.VERTICAL]),
-            self._act1(self.powers[self.HORIZONTAL])]
+            self.powers[self.VERTICAL],
+            self.powers[self.HORIZONTAL]
+            ]
             , dtype=np.float32)
 
 
