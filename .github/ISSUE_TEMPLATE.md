@@ -17,11 +17,11 @@
 ## Describe the problem
 
 <!-- how do you think of the problem? --
-  -- describe it clearly, as well as your ideas about it (if any) -->
+  -- describe it clearly, as well as your ideas on it (if any) -->
 
 <!--
 ## Source Code / Logs
 -->
 
 <!-- If necessary, zip your source code with logs, cancel the annotation --
-  -- symbols, and attach the file here -->
+  -- symbols above, and attach the file here -->

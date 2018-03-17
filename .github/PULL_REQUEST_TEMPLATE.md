@@ -4,7 +4,15 @@
 
 ## What Do These Changes Do
 
-<!-- Please give a short brief about these changes -->
+<!-- Please give a brief description on these changes -->
+
+## File Changes
+
+<!-- M (modified), A (added), D (deleted), R (renamed), C (copied) --
+  -- Example:
+  -- README.rst: M
+  -- tmp.txt: D
+  -->
 
 ## Related Issue Number
 
