@@ -30,6 +30,7 @@ def rollout():
     controller.update()
     action = controller.get_action()
     obs, r, done, _ = env.step(action)
+    controller.feedback(obs = obs, reward = r)
     monitor.update(action=action, obs=obs, score=r)
     env.render(mode="human")
     return obs, r, done

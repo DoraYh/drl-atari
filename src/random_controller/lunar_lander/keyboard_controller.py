@@ -81,7 +81,12 @@ class Controller(object):
         # power delta for each update step
         self.h_delta = h_delta if h_delta is not None else delta
         self.v_delta = v_delta if v_delta is not None else delta
+        self.obs = None
+        self.reward = 0.
 
+    def feedback(self, obs=None, reward=None):
+        self.obs = obs
+        self.reward = reward
 
     def update(self):
         """
@@ -93,10 +98,6 @@ class Controller(object):
         self.powers[self.VERTICAL] = np.random.rand(1)[0]
 
     def get_action(self):
-        """return np.array([
-            np.float32(self.powers[self.VERTICAL]),
-            np.float32(self.powers[self.HORIZONTAL])]
-            , dtype=np.float32)"""
         return np.array([
             self.powers[self.VERTICAL],
             self.powers[self.HORIZONTAL]
