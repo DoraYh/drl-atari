@@ -6,3 +6,5 @@ DRL-Agent: Playing Games with Deep Reinforcement Learning
 
 - Get familiar with collaborating on GitHub;
 - Learn and practice on the basics of Deep Reinforcement Learning.
+
+**Add something for testing purpose.**
