@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[1]:
-
-
 """
 Test yourself as a learning agent with "SpaceInvaders-v0"!
 """
@@ -27,14 +21,14 @@ controller = Controller()
 env.unwrapped.viewer.window.on_key_press = controller.on_key_press
 env.unwrapped.viewer.window.on_key_release = controller.on_key_release
 
-# get observation and reward from environment
-def rollout(obs):
+
+def rollout():
     """
     Read action from keyboard state -> take action in the env -> get result
         frame
     """
     global env, controller
-    action = controller.get_action(obs)
+    action = controller.get_action()
     obs, r, done, _ = env.step(action)
     env.render(mode="human")
     return obs, r, done
@@ -42,10 +36,9 @@ def rollout(obs):
 
 if __name__ == "__main__":
     tot_r = 0.
-    obs = env.reset()
+    env.reset()
     while True:
-        _, r, done = rollout(obs)
+        _, r, done = rollout()
         if done:
             break
         time.sleep(interval)
-
