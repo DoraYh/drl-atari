@@ -18,6 +18,9 @@ env.render(mode="human")
 
 # rebind key events to custom controller
 controller = Controller()
+env.unwrapped.viewer.window.on_key_press = controller.on_key_press
+env.unwrapped.viewer.window.on_key_release = controller.on_key_release
+
 monitor = Monitor()
 
 
