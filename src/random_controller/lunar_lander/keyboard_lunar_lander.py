@@ -9,6 +9,8 @@ import os, sys, gym, time, pyglet
 from keyboard_controller import Controller, Monitor
 
 
+
+
 fps = 12  # frames per second (approximately)
 interval = 1./fps  # interval between consecutive frames
 
@@ -30,9 +32,9 @@ def rollout():
     controller.update()
     action = controller.get_action()
     obs, r, done, _ = env.step(action)
-    controller.feedback(obs = obs, reward = r)
     monitor.update(action=action, obs=obs, score=r)
-    env.render(mode="human")
+    arr = env.render(mode="rgb_array")
+    controller.feedback(obs = obs, reward = r, rgb = arr)
     return obs, r, done
 
 

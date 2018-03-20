@@ -83,11 +83,13 @@ class Controller(object):
         self.v_delta = v_delta if v_delta is not None else delta
         self.obs = None
         self.reward = 0.
+        self.rgb = None
 
-    def feedback(self, obs=None, reward=None):
+    def feedback(self, obs=None, reward=None, rgb=None):
         self.obs = obs
         self.reward = reward
-
+        self.rgb = rgb
+        
     def update(self):
         """
         update the powers randomly, note that value of
