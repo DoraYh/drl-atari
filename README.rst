@@ -236,3 +236,25 @@ Week3: Reinforcement Leaning Basics
 ================================================================================
 
 Go on finishing the reading task.
+
+
+################################################################################
+
+
+Week4: Paper Reading
+================================================================================
+
+Read the paper *Playing Atari with Deep Reinforcement Learning* [1].
+
+Before **2018.04.01 23:59**, you should hand in a memo summarizing this paper.
+There are plenty of materials you can refer to on the Internet,
+but make sure you don't copy them.
+
+
+################################################################################
+
+
+References
+================================================================================
+
+[1] Mnih, Volodymyr, et al. "Playing atari with deep reinforcement learning." arXiv preprint arXiv:1312.5602 (2013).
