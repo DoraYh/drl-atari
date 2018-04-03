@@ -241,12 +241,12 @@ Go on finishing the reading task.
 ################################################################################
 
 
-Week4: Paper Reading
+Week4&5: Paper Reading
 ================================================================================
 
 Read the paper *Playing Atari with Deep Reinforcement Learning* [1].
 
-Before **2018.04.01 23:59**, you should hand in a memo summarizing this paper.
+Before **2018.04.08 23:59**, you should hand in a memo summarizing this paper.
 There are plenty of materials you can refer to on the Internet,
 but make sure you don't copy them.
 
