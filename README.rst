@@ -214,7 +214,7 @@ Before **2018.03.18 23:59**, you should submit your code for random agents.
 Reading Task (Week2, Week3)
 --------------------------------------------------------------------------------
 
-**[Reinforcement Learning: An Introduction, Sutton and Barto 2012]**:
+**[Reinforcement Learning: An Introduction, Sutton and Barto 2012]*:
 
 - Chapter 3.6 MDP
 - Chapter 3.7 Value Functions
@@ -252,6 +252,41 @@ but make sure you don't copy them.
 
 
 ################################################################################
+
+
+Week6&7
+================================================================================
+
+Sorry for the two weeks' gap due to my own business.
+
+
+Week8&9&10: Coding Task
+================================================================================
+
+In the following three weeks, we would finally go on building the DRL
+agents. Having read several chapters from the book **[Reinforcement Learning:**
+** An Introduction, Sutton and Barto 2012]** and the innovative paper *Playing*
+*Atari with Deep Reinforcement Learning*, you should have some ideas how the
+agents evolve from randomly initialized ones to intelligent ones. And now it's
+time for you to validate these ideas.
+
+The only task in the next three weeks is to build a DRL agent capable
+of learning from trials and errors in the game "SpaceInvaders". (And also, it's
+the last task of this project, any other assignments in the future would be the
+bonuses).
+
+In your implementation, you must follow the structure of the code as shown in
+`refactored`_ (The two files starting with ``state`` can be left out currently),
+which means that you should inherit the class defined in
+``controller_base.py`` to build your DRL agent and just a small number
+of lines in ``space_invaders.py`` require modification.
+
+.. _`refactored`: https://github.com/lukeluochina/drl-atari/tree/master/src/random_controller_refactored
+
+When you are building the DRL agents, you can refer to other implementations
+(like `baselines`_), but make sure that you do not go against their licenses.
+
+.. _`baselines`: https://github.com/openai/baselines
 
 
 References
