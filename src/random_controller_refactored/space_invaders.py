@@ -17,7 +17,7 @@ controller = RandomController(("discrete", [env.action_space.__dict__["n"]]))
 # get observation and reward from environment
 def rollout(obs=None, reward=None, raw_pixels=None):
     """
-    Read action from keyboard state -> take action in the env -> get result
+    Get action from the controller -> take action in the env -> get result
         frame
     """
     global env, controller
